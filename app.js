@@ -7,6 +7,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.use(express.static("public"));
+
 const API_KEY = process.env.API_KEY;
 
 
@@ -38,6 +40,9 @@ app.post("/", function(req, res){
             res.write("<h3>The weather  is " + description +" </h3>");
             res.write("<img src ="+iconURL+ ">");
             res.send();
+
+           
+
         });
        
     });
